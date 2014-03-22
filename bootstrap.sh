@@ -46,6 +46,8 @@ else
   export PATH=$HOME/.cask/bin:$PATH
   curl -fsSkL https://raw.github.com/cask/cask/master/go | python
 
+  brew bundle
+
   echo ""
   echo "dotemacsd is linked to ~/.emacs.d"
   echo "Cask dependency manager is installed"
