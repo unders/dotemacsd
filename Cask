@@ -32,7 +32,6 @@
 
 (depends-on "feature-mode")
 (depends-on "minitest" :git "https://github.com/unders/minitest-emacs.git")
-(depends-on "ruby-test-mode")
 (depends-on "rspec-mode")
 (depends-on "robe")
 (depends-on "inf-ruby")
