@@ -121,6 +121,11 @@
 
 ;; Don't backup files
 (setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;; turn on auto complete
+(require 'auto-complete-config)
+(ac-config-default)
 
 ;; Ruby mode
 
