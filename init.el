@@ -112,12 +112,22 @@
 (define-key evil-visual-state-map (kbd "SPC") 'ace-jump-word-mode)
 
 (evil-leader/set-key
-  ;;"e" 'find-file
   ;;"x"  'execute-extended-command
+  ;"s"   run single test
+  "m"  'projectile-ag
+  "f"  'projectile-find-file
+  "t"  'projectile-toggle-between-implementation-and-test
+  "v"  'minitest-verify
+  "r"  'minitest-rerun
+  "a"  'minitest-verify-all
+  "p"  'projectile-switch-project
+  "gf" 'projectile-rails-goto-file-at-point
   "u"  'undo-tree-visualize
   "e"  'eshell
   "b"  'switch-to-buffer
   "k"  'kill-buffer)
+
+(global-set-key (kbd "C-x f") 'projectile-find-file)
 
 ;; Don't backup files
 (setq make-backup-files nil)
@@ -142,6 +152,12 @@
 
 ;; robe-mode
 (add-hook 'ruby-mode-hook 'robe-mode)
+
+;; auto-complete
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (make-local-variable 'ac-ignores)
+            (add-to-list 'ac-ignores "end")))
 
 ;; Smartparens
 (require 'smartparens)
@@ -173,6 +189,7 @@
 ;; Fix encoding
 (setq default-process-coding-system '(utf-8 . utf-8))
 
+
 ;; Smooth scrolling
 ;; From http://stackoverflow.com/questions/3631220/fix-to-get-smooth-scrolling-in-emacs
 (setq redisplay-dont-pause t
@@ -193,5 +210,22 @@
  mac-option-modifier nil
  mac-command-modifier 'meta
  x-select-enable-clipboard t)
+
+;; change window keybingings
+(global-set-key (kbd "C-c C-<right>") 'windmove-right)
+(global-set-key (kbd "C-c C-<up>")    'windmove-up)
+(global-set-key (kbd "C-c C-<left>")  'windmove-left)
+(global-set-key (kbd "C-c C-<down>")  'windmove-down)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ag-arguments (quote ("--smart-case" "--nogroup" "--column" "--ignore=log" "--ignore=app/sass/bourbon" "--ignore=bower_components" "--ignore=node_modules" "--ignore=app/sass/neat")))
+ '(current-language-environment "UTF-8")
+ '(feature-cucumber-command "zeus cucumber CUCUMBER_OPTS=\"{options}\" FEATURE=\"{feature}\"")
+ '(magit-set-upstream-on-push t)
+ '(tree-widget-image-enable nil))
 
 (defalias 'yes-or-no-p 'y-or-n-p)

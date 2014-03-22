@@ -62,7 +62,8 @@ In Normal mode or Visual mode hit `SPC` to activate `ace-jump-word-mode`
     * C-x C-s  apply changes to file buffers
 
 ### Projectile
-    * M-e open recent files
+    * M-e    open recent files
+    * C-x f  find file in project
 
 ### Packages
 List available packages:
