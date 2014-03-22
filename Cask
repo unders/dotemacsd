@@ -20,11 +20,20 @@
 (depends-on "evil")
 (depends-on "evil-leader")
 (depends-on "ace-jump-mode")
+(depends-on "auto-complete")
 
+(depends-on "column-marker")
 ;; Replace flymake med flycheck
 ;; https://github.com/flycheck/flycheck
 (depends-on "flymake-ruby")
 
+(depends-on "wgrep" :git "https://github.com/mhayashi1120/Emacs-wgrep.git")
+(depends-on "ag")
+
+(depends-on "feature-mode")
+(depends-on "minitest" :git "https://github.com/unders/minitest-emacs.git")
+(depends-on "ruby-test-mode")
+(depends-on "rspec-mode")
 (depends-on "robe")
 (depends-on "inf-ruby")
 (depends-on "flx-ido")

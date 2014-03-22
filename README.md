@@ -54,6 +54,16 @@ In Normal mode or Visual mode hit `SPC` to activate `ace-jump-word-mode`
     * M-, pop-tag-mark
     * M-. robe-jump (only works in insert-mode)
 
+### Ag - reqexp
+    * Leader m reqexp search in project
+    * o        open match in buffer but don't go there
+    * RET      open and go to match
+    * r        toggle read-only area
+    * C-x C-s  apply changes to file buffers
+
+### Projectile
+    * M-e open recent files
+
 ### Packages
 List available packages:
 

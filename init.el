@@ -9,6 +9,10 @@
 
 ;; Move the stuff below to other files.
 
+;; Larger fonts
+(set-face-attribute 'default nil :height 140)
+(set-frame-font "Menlo-14")
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -21,12 +25,11 @@
 ;; Add line numbers
 ;(global-linum-mode 1)
 
+;; Add the cursor's column position
+(column-number-mode 1)
+
 ;; Highlights the matching paren
 (show-paren-mode 1)
-
-;; Larger fonts
-(set-face-attribute 'default nil :height 140)
-;(set-face-attribute 'default nil :height 160)
 
 ;; Interactively Do Things
 (require 'flx-ido)
@@ -36,8 +39,33 @@
 ;; disable ido faces to see flx highlights.
 (setq ido-use-faces nil)
 
+;; ag
+(require 'wgrep)
+(autoload 'wgrep-ag-setup "wgrep-ag")
+(setq wgrep-auto-save-buffer t)
+(setq wgrep-enable-key "r")
+
+(add-hook 'ag-mode-hook 'unders/ag-mode)
+
+(defun unders/ag-mode ()
+  (wgrep-ag-setup)
+  (define-key (current-local-map) (kbd "o") 'unders/open-but-dont-move))
+
+;; open search result but stay in ag buffer
+(defun unders/open-but-dont-move ()
+  (interactive)
+  (let ((buffer (current-buffer)))
+    (compile-goto-error)
+    (pop-to-buffer buffer)))
+
+(require 'ag)
+
 ;; Projectile
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 10)
 (projectile-global-mode)
+(global-set-key (kbd "M-e") 'projectile-recentf)
 
 ;; Display ido results vertically, rather than horizontally
   (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))

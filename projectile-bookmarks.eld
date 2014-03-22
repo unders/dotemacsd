@@ -1,1 +1,1 @@
-("~/Projects/dotemacsd/" "~/Projects/mantis/" "~/Projects/boar/" "~/Projects/joblisa/" "~/Projects/emacs-base/" "~/Projects/minitest-emacs/")
+("~/Projects/joblisa/" "~/Projects/dotemacsd/" "~/Projects/emacs-base/" "~/Projects/mantis/" "~/Projects/boar/" "~/Projects/minitest-emacs/")
