@@ -78,9 +78,6 @@
 
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
-;; rbenv to manage your Ruby versions within Emacs
-(require 'rbenv)
-(global-rbenv-mode)
 
 ;; A GNU Emacs library to setup environment variables from the user's shell.
 (when (memq window-system '(mac ns))
@@ -137,12 +134,34 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-;; Ruby mode
+;; rbenv to manage your Ruby versions within Emacs
+(require 'rbenv)
+(global-rbenv-mode)
 
+;; Ruby mode
+(defun my-ruby-hook ()
+  (flymake-ruby-load)
+  (minitest-mode)
+  (modify-syntax-entry ?_ "w")
+  (modify-syntax-entry ?! "w")
+  (modify-syntax-entry ?? "w")
+  (modify-syntax-entry ?- "w"))
+
+(add-hook 'ruby-mode-hook 'my-ruby-hook)
+
+(setq-default minitest-keymap-prefix (kbd "C-c C-c ,"))
+(setq-default minitest-use-zeus-when-possible nil)
+(setq-default minitest-use-bundler nil)
+(setq-default minitest-default-env "export $(cat .env | xargs) &&")
+(require 'minitest)
+(require 'rspec-mode)
+
+;; when yasnippet installed
+; (eval-after-load 'rspec-mode
+; '(rspec-install-snippets))
 
 ;; Flymake-ruby TODO: Maybe replace Flymake
 (require 'flymake-ruby)
-(add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
 (setq ruby-deep-indent-paren nil)
 (global-set-key (kbd "C-c r r") 'inf-ruby)
