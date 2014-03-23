@@ -29,4 +29,5 @@
 (depends-on "smex")
 (depends-on "wgrep" :git "https://github.com/mhayashi1120/Emacs-wgrep.git")
 (depends-on "yaml-mode")
+(depends-on "yari")
 (depends-on "zenburn-theme")

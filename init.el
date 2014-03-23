@@ -152,9 +152,16 @@
 (add-to-list 'auto-mode-alist
              '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
+(defun ri-bind-key ()
+  (local-set-key (kbd "C-h r") 'yari))
+
 (defun my-ruby-hook ()
   (flymake-ruby-load)
   (minitest-mode)
+  (ri-bind-key)
+  (modify-syntax-entry ?: ".")
+  (modify-syntax-entry ?@ "w")
+  (modify-syntax-entry ?$ "w")
   (modify-syntax-entry ?_ "w")
   (modify-syntax-entry ?! "w")
   (modify-syntax-entry ?? "w")
