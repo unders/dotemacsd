@@ -1,1 +1,2 @@
 install the_silver_searcher
+install hunspell

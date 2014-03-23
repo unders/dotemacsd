@@ -1,21 +1,17 @@
+# dotemacsd
+
 ### Installing
-1.Clone this directory:
+1. Clone this directory:
 
     git clone git://github.com/unders/dotemacsd.git path/to/local/repo
 
-2.cd dotemacsd and run bootstrap:
+2. cd dotemacsd and run bootstrap:
     ./bootstrap.sh
 
-3.Finally: Add the Cask dependency manager to your $PATH:
+3. Finally: Add the Cask dependency manager to your $PATH:
     $ export PATH="$HOME/.cask/bin:$PATH"
 
-### Running Emacs
-
-
-### Commands
-
-
-### Plugins
+### Plug-ins
 
 #### Magit
 To use Magit, run `M-x magit-status`, or type:
@@ -33,7 +29,7 @@ Here is an article that describes Magit: [Introduction to magit emacs mode](http
 #### Evil
 Emulates VIM.
 
-### Evil-leader, and ace-jump
+### Evil-leader
 Leader key is set to `","` and
     * Leader u undo-tree-visualize
     * Leader e eshell
@@ -71,6 +67,10 @@ In Normal mode or Visual mode hit `SPC` to activate `ace-jump-word-mode`
     * M-.   jumps to the definition of the selected command.
     * C-h w shows the key bindings for the selected command. (Via where-is.)
 
+### Hunspell
+    * Leader gl ispell-region
+    * Leader gb ispell-buffer
+
 ### Packages
 List available packages:
 
@@ -93,3 +93,5 @@ execute the scheduled actions.
  * [Ace Jump Mode](https://github.com/winterTTr/ace-jump-mode)
  * [Projectile](http://batsov.com/projectile)
  * [Projectile Rails](https://github.com/asok/projectile-rails)
+ * [Spelling](https://joelkuiper.eu/spellcheck_emacs)
+ * [Dictonaries Open Office](https://wiki.openoffice.org/wiki/Dictionaries)

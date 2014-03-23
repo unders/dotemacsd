@@ -17,7 +17,7 @@
 
 (setq inhibit-splash-screen t)
 
-;; Highligt current line
+;; Highlight current line
 (global-hl-line-mode 1)
 
 ;; Add line numbers
@@ -119,6 +119,8 @@
   "m"  'projectile-ag
   "f"  'projectile-find-file
   "t"  'projectile-toggle-between-implementation-and-test
+  "gl" 'ispell-region
+  "gb" 'ispell-buffer
   "gr" 'projectile-rails-rake
   "gg" 'projectile-rails-generate
   "gm" 'projectile-rails-find-model
@@ -228,6 +230,20 @@
 ;; Fix encoding
 (setq default-process-coding-system '(utf-8 . utf-8))
 
+;; hunspell
+(when (executable-find "hunspell")
+  (setq-default ispell-program-name "hunspell")
+  (setq ispell-really-hunspell t))
+
+;; When programming only checks comments and strings on the fly.
+(dolist (mode '(ruby-mode-hook))
+  (add-hook mode
+            '(lambda ()
+               (flyspell-prog-mode))))
+
+;; Enable flyspell for text files
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
 
 ;; Smooth scrolling
 ;; From http://stackoverflow.com/questions/3631220/fix-to-get-smooth-scrolling-in-emacs

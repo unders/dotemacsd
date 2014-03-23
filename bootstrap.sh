@@ -14,8 +14,8 @@ if command_exists emacs
 then
   emacs --version &> /dev/null
 else
-  echo "You must install emacs first"
-  echo "On OS X, install emacs with Homebrew:"
+  echo "You must install Emacs first"
+  echo "On OS X, install Emacs with Homebrew:"
   echo "brew install emacs --use-git-head --cocoa --srgb"
   echo "or try:"
   echo "brew install bazaar"
@@ -46,23 +46,23 @@ else
   export PATH=$HOME/.cask/bin:$PATH
   curl -fsSkL https://raw.github.com/cask/cask/master/go | python
 
-  echo "   ####################### "
-  echo "Installing OS X dependencies with homebrew."
-  echo "The Brewfile specifies the OS X dependencies."
-
-  brew bundle
-
-  echo ""
-  echo "If you get error messages, some of your dependencies"
-  echo "might already be installed."
-  echo "   ####################### "
-
   echo ""
   echo "dotemacsd is linked to ~/.emacs.d"
   echo "Cask dependency manager is installed"
   echo "Boostrap of dotemacsd is done."
 
+  echo "Below some manual steps."
+
   echo ""
-  echo "Do't forget to add Cask's bin to your PATH:"
+  echo "Make sure all native dependencies are installed:"
+  echo "cat Brewfile"
+
+  echo ""
+  echo "Activate English spelling:"
+  echo "ln -s /full-path/dotemacsd/spelling/en_US.aff ~/Library/Spelling/default.aff"
+  echo "ln -s /full-path/dotemacsd/spelling/en_US.dic ~/Library/Spelling/default.dic"
+
+  echo ""
+  echo "Don’t forget to add Cask's bin to your PATH:"
   echo 'export PATH=$HOME/.cask/bin:$PATH'
 fi
