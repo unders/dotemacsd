@@ -14,6 +14,7 @@
 (depends-on "feature-mode")
 (depends-on "flx-ido")
 (depends-on "flymake-ruby")
+(depends-on "git-gutter-fringe")
 (depends-on "inf-ruby")
 (depends-on "magit" :git "https://github.com/magit/magit.git")
 (depends-on "markdown-mode")

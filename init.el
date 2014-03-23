@@ -29,6 +29,14 @@
 ;; Highlights the matching paren
 (show-paren-mode 1)
 
+;; Git gutter
+(when (window-system)
+(require 'git-gutter-fringe))
+
+(global-git-gutter-mode +1)
+(setq-default indicate-buffer-boundaries 'left)
+(setq-default indicate-empty-lines +1)
+
 ;; A smart M-x enhancement for Emacs
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
