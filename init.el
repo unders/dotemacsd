@@ -3,9 +3,7 @@
 
 ;; Pallet keeps the Cask file in sync with the packages
 ;; that you install/uninstall via M-x package-list-packages
-;; this does not work for the moment
-;; install with command "cask install" instead
-;; (require 'pallet)
+(require 'pallet)
 
 ;; Move the stuff below to other files.
 
@@ -244,6 +242,8 @@
 (global-set-key (kbd "C-c C-<up>")    'windmove-up)
 (global-set-key (kbd "C-c C-<left>")  'windmove-left)
 (global-set-key (kbd "C-c C-<down>")  'windmove-down)
+
+;; Move the stuff above to other files.
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
