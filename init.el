@@ -111,11 +111,15 @@
 (evil-leader/set-key
   ;;"x"  'execute-extended-command
   ;"s"   run single test
+  "1"  'delete-other-windows
   "m"  'projectile-ag
   "f"  'projectile-find-file
   "t"  'projectile-toggle-between-implementation-and-test
-  "v"  'minitest-verify
+  "gr" 'projectile-rails-rake
+  "gg" 'projectile-rails-generate
+  "gm" 'projectile-rails-find-model
   "r"  'minitest-rerun
+  "v"  'minitest-verify
   "a"  'minitest-verify-all
   "p"  'projectile-switch-project
   "gf" 'projectile-rails-goto-file-at-point
@@ -139,6 +143,11 @@
 (global-rbenv-mode)
 
 ;; Ruby mode
+(add-to-list 'auto-mode-alist
+             '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist
+             '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
+
 (defun my-ruby-hook ()
   (flymake-ruby-load)
   (minitest-mode)

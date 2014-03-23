@@ -23,8 +23,6 @@
 (depends-on "auto-complete")
 
 (depends-on "column-marker")
-;; Replace flymake med flycheck
-;; https://github.com/flycheck/flycheck
 (depends-on "flymake-ruby")
 
 (depends-on "wgrep" :git "https://github.com/mhayashi1120/Emacs-wgrep.git")
