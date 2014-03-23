@@ -262,6 +262,9 @@
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
 
+(setq mouse-wheel-follow-mouse 't)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+
 ;; Disable ring bell
 (setq ring-bell-function 'ignore)
 
