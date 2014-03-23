@@ -1,7 +1,7 @@
-rm ~/.emacs.d
-rm -rf ~/.emacs.d
-
+# rm ~/.emacs.d
+# rm -rf ~/.emacs.d
 # Remove everything above this line.
+
 echo ""
 echo "Bootstrap of dotemacsd starts."
 echo ""
