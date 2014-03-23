@@ -46,7 +46,16 @@ else
   export PATH=$HOME/.cask/bin:$PATH
   curl -fsSkL https://raw.github.com/cask/cask/master/go | python
 
+  echo "   ####################### "
+  echo "Installing OS X dependencies with homebrew."
+  echo "The Brewfile specifies the OS X dependencies."
+
   brew bundle
+
+  echo ""
+  echo "If you get error messages, some of your dependencies"
+  echo "might already be installed."
+  echo "   ####################### "
 
   echo ""
   echo "dotemacsd is linked to ~/.emacs.d"

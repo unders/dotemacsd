@@ -10,10 +10,11 @@
 
 
 ;; ADD A DEPENDENCY
+;; http://cask.github.io/dsl.html#depends-on
 ;; (depends-on NAME [VERSION])
 ;; (depends-on NAME [:git "git-repo"])
 
-(depends-on "pallet")
+(depends-on "pallet" "0.6")
 (depends-on "magit" :git "https://github.com/magit/magit.git")
 (depends-on "zenburn-theme")
 (depends-on "markdown-mode")
