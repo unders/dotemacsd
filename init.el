@@ -123,6 +123,7 @@
 (evil-leader/set-key
   ;;"x"  'execute-extended-command
   ;"s"   run single test
+  "d"  'dash-at-point
   "1"  'delete-other-windows
   "m"  'projectile-ag
   "f"  'projectile-find-file
@@ -132,6 +133,7 @@
   "gr" 'projectile-rails-rake
   "gg" 'projectile-rails-generate
   "gm" 'projectile-rails-find-model
+  "ge" 'ielm
   "r"  'minitest-rerun
   "v"  'minitest-verify
   "a"  'minitest-verify-all
