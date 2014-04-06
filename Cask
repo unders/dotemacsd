@@ -25,6 +25,7 @@
 (depends-on "markdown-mode")
 (depends-on "minitest" :git "https://github.com/unders/minitest-emacs.git")
 (depends-on "niflheim-theme")
+(depends-on "noctilux-theme")
 (depends-on "pallet" "0.6")
 (depends-on "projectile")
 (depends-on "projectile-rails")
