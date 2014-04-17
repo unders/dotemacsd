@@ -8,7 +8,7 @@
 ;; Move the stuff below to other files.
 
 ;; Larger fonts
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 160)
 (set-frame-font "Menlo-14")
 
 ;; Turn off mouse interface early in startup to avoid momentary display
@@ -221,12 +221,17 @@
 (add-hook 'ruby-mode-hook '(lambda ()
   (local-set-key (kbd "RET") 'newline-and-indent)))
 
-
-
 ;; Theme
 ;; https://github.com/bbatsov/zenburn-emacs
-(load-theme 'zenburn t)
-(set-cursor-color "firebrick")
+;; (load-theme 'zenburn t)
+
+;; https://github.com/neil477/base16-emacs
+(load-theme 'base16-default t)
+
+;; https://github.com/stafu/noctilux-theme
+;; (load-theme 'noctilux t)
+
+;;(set-cursor-color "firebrick")
 
 ;; Use spaces instead of tabs when indenting
 (setq-default indent-tabs-mode nil)
@@ -245,16 +250,6 @@
   (setq-default ispell-program-name "hunspell")
   (setq ispell-really-hunspell t))
 
-;; When programming only checks comments and strings on the fly.
-(dolist (mode '(ruby-mode-hook))
-  (add-hook mode
-            '(lambda ()
-               (flyspell-prog-mode))))
-
-;; Enable flyspell for text files
-(dolist (hook '(text-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode 1))))
-
 ;; Smooth scrolling
 ;; From http://stackoverflow.com/questions/3631220/fix-to-get-smooth-scrolling-in-emacs
 (setq redisplay-dont-pause t
@@ -264,8 +259,6 @@
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
 
-(setq mouse-wheel-follow-mouse 't)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 
 ;; Disable ring bell
 (setq ring-bell-function 'ignore)
@@ -292,9 +285,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ac-ignore-case nil)
  '(ag-arguments (quote ("--smart-case" "--nogroup" "--column" "--ignore=log" "--ignore=app/sass/bourbon" "--ignore=bower_components" "--ignore=node_modules" "--ignore=app/sass/neat")))
  '(current-language-environment "UTF-8")
  '(feature-cucumber-command "zeus cucumber CUCUMBER_OPTS=\"{options}\" FEATURE=\"{feature}\"")
+ '(ido-auto-merge-delay-time 10)
  '(magit-set-upstream-on-push t)
  '(tree-widget-image-enable nil))
 
