@@ -227,9 +227,8 @@
 
 ;; https://github.com/neil477/base16-emacs
 (load-theme 'base16-default t)
-
 ;; https://github.com/stafu/noctilux-theme
-;; (load-theme 'noctilux t)
+(load-theme 'noctilux t)
 
 ;;(set-cursor-color "firebrick")
 
