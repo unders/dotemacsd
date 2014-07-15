@@ -27,6 +27,7 @@
 (depends-on "niflheim-theme")
 (depends-on "noctilux-theme")
 (depends-on "pallet" "0.6")
+(depends-on "paredit")
 (depends-on "projectile")
 (depends-on "projectile-rails")
 (depends-on "rainbow-mode")

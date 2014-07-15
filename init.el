@@ -8,7 +8,7 @@
 ;; Move the stuff below to other files.
 
 ;; Larger fonts
-(set-face-attribute 'default nil :height 160)
+(set-face-attribute 'default nil :height 140)
 (set-frame-font "Menlo-14")
 
 ;; Turn off mouse interface early in startup to avoid momentary display
@@ -116,6 +116,13 @@
 (evil-leader/set-leader ",")
 (evil-mode 1)
 
+;; Disable this so that C-k will work for paredit.
+;; evil-insert-digraph
+(define-key evil-insert-state-map (kbd "C-k") nil)
+;; evil-shift-left-line
+(define-key evil-insert-state-map (kbd "C-d") nil)
+
+
 ;; ace-jump-char-mode, ace-jump-line-mode, ace-jump-mode
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-word-mode)
 (define-key evil-visual-state-map (kbd "SPC") 'ace-jump-word-mode)
@@ -221,9 +228,26 @@
 (add-hook 'ruby-mode-hook '(lambda ()
   (local-set-key (kbd "RET") 'newline-and-indent)))
 
+;; elisp
+(setq paredit-awesome-p t)
+(autoload 'enable-paredit-mode "paredit")
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; elisp
+
+;; Clojure
+
+;; Clojure
+
 ;; Theme
 ;; https://github.com/bbatsov/zenburn-emacs
 ;; (load-theme 'zenburn t)
+
 
 ;; https://github.com/neil477/base16-emacs
 (load-theme 'base16-default t)
@@ -290,6 +314,16 @@
  '(feature-cucumber-command "zeus cucumber CUCUMBER_OPTS=\"{options}\" FEATURE=\"{feature}\"")
  '(ido-auto-merge-delay-time 10)
  '(magit-set-upstream-on-push t)
+ '(rspec-spec-command "bin/rspec")
+ '(rspec-use-bundler-when-possible nil)
+ '(rspec-use-rake-when-possible nil)
+ '(rspec-use-spring-when-possible nil)
  '(tree-widget-image-enable nil))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
