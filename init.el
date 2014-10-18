@@ -130,6 +130,7 @@
 (evil-leader/set-key
   ;;"x"  'execute-extended-command
   ;"s"   run single test
+  "c" 'compile
   "d"  'dash-at-point
   "1"  'delete-other-windows
   "m"  'projectile-ag
@@ -161,6 +162,13 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+;; Rust start
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(require 'flymake-rust)
+(add-hook 'rust-mode-hook 'flymake-rust-load)
+;; Rust end
+
 ;; rbenv to manage your Ruby versions within Emacs
 (require 'rbenv)
 (global-rbenv-mode)
@@ -175,7 +183,7 @@
   (local-set-key (kbd "C-h r") 'yari))
 
 (defun my-ruby-hook ()
-  (flymake-ruby-load)
+  ;; (flymake-ruby-load)
   (minitest-mode)
   (ri-bind-key)
   (modify-syntax-entry ?: ".")
@@ -200,7 +208,7 @@
 ; '(rspec-install-snippets))
 
 ;; Flymake-ruby TODO: Maybe replace Flymake
-(require 'flymake-ruby)
+;; (require 'flymake-ruby)
 
 (setq ruby-deep-indent-paren nil)
 (global-set-key (kbd "C-c r r") 'inf-ruby)
@@ -237,6 +245,11 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; TODO: Need help with this!
+;; (defun my-lisp-hook ()
+;;   (modify-syntax-entry ?- "w"))
+;; (add-hook 'lisp-mode-hook       'my-lisp-hook)
 
 ;; elisp
 
