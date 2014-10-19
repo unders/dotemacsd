@@ -19,6 +19,9 @@
 
 ;; Highlight current line
 (global-hl-line-mode 1)
+(set-face-background 'hl-line "#3e4446")
+(set-face-attribute 'region nil :background "#3e5656")
+
 
 ;; Add line numbers
 ;(global-linum-mode 1)
@@ -130,7 +133,8 @@
 (evil-leader/set-key
   ;;"x"  'execute-extended-command
   ;"s"   run single test
-  "c" 'compile
+  "s" 'racer-find-definition ;; racer find definition
+  "c"  'compile
   "d"  'dash-at-point
   "1"  'delete-other-windows
   "m"  'projectile-ag
@@ -167,6 +171,8 @@
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 (require 'flymake-rust)
 (add-hook 'rust-mode-hook 'flymake-rust-load)
+(add-hook 'rust-mode-hook 'global-company-mode)
+(add-to-list 'load-path "/Users/unders/Projects/racer/editors") (require 'racer)
 ;; Rust end
 
 ;; rbenv to manage your Ruby versions within Emacs
@@ -261,13 +267,20 @@
 ;; https://github.com/bbatsov/zenburn-emacs
 ;; (load-theme 'zenburn t)
 
-
+;; http://chapter31.com/2013/06/01/base16-colour-scheme-for-hackers/
+;; https://github.com/chriskempson/base16
 ;; https://github.com/neil477/base16-emacs
-(load-theme 'base16-default t)
-;; https://github.com/stafu/noctilux-theme
-(load-theme 'noctilux t)
+;; (load-theme 'base16-default t)
+(load-theme 'base16-tomorrow t)
 
-;;(set-cursor-color "firebrick")
+;; https://github.com/stafu/noctilux-theme
+;; (load-theme 'noctilux t)
+;; (load-theme 'mccarthy t)
+;; (load-theme 'wilson t)
+
+
+
+;; (set-cursor-color "firebrick")
 
 ;; Use spaces instead of tabs when indenting
 (setq-default indent-tabs-mode nil)

@@ -11,6 +11,7 @@
 (depends-on "base16-theme")
 (depends-on "color-theme-solarized")
 (depends-on "column-marker")
+(depends-on "company")
 (depends-on "dash-at-point")
 (depends-on "evil")
 (depends-on "evil-leader")
