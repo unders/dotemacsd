@@ -173,6 +173,9 @@
 (add-hook 'rust-mode-hook 'flymake-rust-load)
 (add-hook 'rust-mode-hook 'global-company-mode)
 (add-to-list 'load-path "/Users/unders/Projects/racer/editors") (require 'racer)
+
+(require 'toml-mode)
+
 ;; Rust end
 
 ;; rbenv to manage your Ruby versions within Emacs

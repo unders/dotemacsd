@@ -39,6 +39,7 @@
 (depends-on "rust-mode")
 (depends-on "smartparens")
 (depends-on "smex")
+(depends-on "toml-mode")
 (depends-on "wgrep" :git "https://github.com/mhayashi1120/Emacs-wgrep.git")
 (depends-on "yaml-mode")
 (depends-on "yari")
