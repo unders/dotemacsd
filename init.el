@@ -178,6 +178,37 @@
 
 ;; Rust end
 
+;; JavaScript start
+
+(add-hook 'js-mode-hook 'js2-minor-mode)
+
+;; Leader-d -> dash-at-point for JavaScript
+(add-to-list 'dash-at-point-mode-alist '(js-mode . "javascript"))
+
+;; http://truongtx.me/2014/04/20/emacs-javascript-completion-and-refactoring
+;; M-.     Jump to the definition of the thing under the cursor.
+;; M-,     Brings you back to last place you were when you pressed M-..
+;; C-c C-r Rename the variable under the cursor.
+;; C-c C-c Find the type of the thing under the cursor.
+;; C-c C-d Find docs of the thing under the cursor. Press again
+;;         to open the associated URL (if any).
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
+
+;; M-x run-skewer
+;; C-x C-e: Evaluate the form before the point and display the
+;;          result in the minibuffer. If given a prefix argument, insert
+;;          the result into the current buffer.
+;; C-M-x:   Evaluate the top-level form around the point.
+;; C-c C-k: Load the current buffer.
+;; C-c C-z: Select the REPL buffer.
+(add-hook 'js-mode-hook 'skewer-mode)
+
+;; JavaScript end
+
 ;; rbenv to manage your Ruby versions within Emacs
 (require 'rbenv)
 (global-rbenv-mode)
