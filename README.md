@@ -95,3 +95,4 @@ execute the scheduled actions.
  * [Projectile Rails](https://github.com/asok/projectile-rails)
  * [Spelling](https://joelkuiper.eu/spellcheck_emacs)
  * [Dictonaries Open Office](https://wiki.openoffice.org/wiki/Dictionaries)
+ * [Skewer](https://github.com/skeeto/skewer-mode)

@@ -1,1 +1,1 @@
-("~/Projects/dotemacsd/" "~/Projects/boar/" "~/Projects/puggle/" "~/Projects/mantis/" "~/Projects/joblisa/" "~/Sandbox/design/" "~/Projects/emacs-base/" "~/Projects/minitest-emacs/")
+("~/Projects/mantis/" "~/Projects/viper/client/viper/" "~/Projects/viper/" "~/Projects/http_zero/" "~/Projects/joblyn/" "~/Projects/dotemacsd/" "~/Projects/boar/" "~/Projects/status_page/" "~/Projects/jane/" "~/Projects/web-starter-kit/" "~/Projects/js/closure-library/" "~/Projects/puggle/" "~/Projects/joblisa/" "~/Sandbox/design/" "~/Projects/emacs-base/" "~/Projects/minitest-emacs/")

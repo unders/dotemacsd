@@ -183,7 +183,10 @@
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
 ;; Leader-d -> dash-at-point for JavaScript
-(add-to-list 'dash-at-point-mode-alist '(js-mode . "javascript"))
+;; (add-to-list 'dash-at-point-mode-alist '(js-mode . "javascript"))
+(add-to-list 'dash-at-point-mode-alist '(js-mode . "javascript,goog"))
+
+(add-to-list 'auto-mode-alist '("\\.js.erb$" . js-mode))
 
 ;; http://truongtx.me/2014/04/20/emacs-javascript-completion-and-refactoring
 ;; M-.     Jump to the definition of the thing under the cursor.
@@ -206,6 +209,10 @@
 ;; C-c C-k: Load the current buffer.
 ;; C-c C-z: Select the REPL buffer.
 (add-hook 'js-mode-hook 'skewer-mode)
+
+;; add
+;; https://github.com/google/tern-closure
+;; http://cortyuming.hateblo.jp/entry/20120817/p1 - closure linter
 
 ;; JavaScript end
 
